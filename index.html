@@ -420,13 +420,12 @@ section {
         <a href="tel:+917889122847" class="btn btn-primary">Call Now</a>
         <a href="https://wa.me/917889122847" class="btn btn-outline">WhatsApp</a>
     </div>
-   <form class="contact-form" action="https://formsubmit.co/btechrepairsdehlon@gmail.com" method="POST"></form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="tel" placeholder="Phone Number" required>
-    <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_subject" value="New Inquiry from Website">
+   <form class="contact-form" action="https://formsubmit.co/btechrepairsdehlon@gmail.com" method="POST">
 
-    <select required>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <select name="service" required>
         <option value="">Select Service</option>
         <option>Mobile Repair</option>
         <option>Air Tickets</option>
@@ -435,7 +434,12 @@ section {
         <option>Internet Café</option>
     </select>
 
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="New Inquiry from Website">
+    <input type="hidden" name="_next" value="https://btechrepairs.netlify.app">
+
     <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+
 </form>
 <div class="map">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1441.7361732984834!2d75.84840320904176!3d30.745214116781064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1775228772559!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
