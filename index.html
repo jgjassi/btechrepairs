@@ -39,16 +39,18 @@ section {
         }
 
         /* NAVBAR */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: rgba(0,0,0,0.6);
-            position: fixed;
-            width: 100%;
-            top: 0;
-        }
+     .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
         .logo {
             font-size: 24px;
@@ -56,13 +58,28 @@ section {
             color: #3B82F6;
         }
 
-        .nav-links a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: white;
-            transition: 0.3s;
-        }
+       .nav-links a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #e2e8f0;
+    font-weight: 500;
+    position: relative;
+    transition: 0.3s;
+}
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: #3B82F6;
+    transition: 0.3s;
+}
 
+.nav-links a:hover::after {
+    width: 100%;
+}
         .nav-links a:hover {
             color: #3B82F6;
         }
@@ -78,15 +95,20 @@ section {
         }
 
         .hero h1 {
-            font-size: 50px;
-            font-weight: 700;
-        }
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+}
 
-        .hero p {
-            margin-top: 15px;
-            font-size: 18px;
-            color: #ccc;
-        }
+      .hero p {
+    margin-top: 15px;
+    font-size: 32px;
+    color: #cbd5f5;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
 
         .buttons {
             margin-top: 30px;
@@ -168,15 +190,21 @@ section {
 
 .card {
     background: #1E293B;
-    padding: 25px;
-    width: 250px;
-    border-radius: 15px;
+    padding: 30px;
+    width: 260px;
+    border-radius: 18px;
     transition: 0.3s;
     cursor: pointer;
+    text-align: left;
 }
 
 .card h3 {
-    margin-bottom: 10px;
+    color: #ffffff;
+    transition: 0.3s;
+}
+
+.card:hover h3 {
+    color: #3B82F6;
 }
 
 .card p {
@@ -185,12 +213,13 @@ section {
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 30px rgba(59,130,246,0.3);
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(59,130,246,0.4);
 }
-   .camvibe {
-    padding: 100px 50px;
-    background: linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.9)),
+  
+.camvibe {
+    padding: 120px 50px;
+    background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)),
                 url('images/cctv.jpg');
     background-size: cover;
     background-position: center;
@@ -260,6 +289,48 @@ section {
     font-size: 13px;
     color: #777;
 }
+.highlight {
+    border: 2px solid #3B82F6;
+    transform: scale(1.05);
+}
+.highlight h3 {
+    color: #3B82F6;
+}
+.cam-content h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.cam-content h4 {
+    margin-top: 10px;
+    color: #3B82F6;
+    font-weight: 500;
+}
+.contact-form {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form select {
+    width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+.contact-form button {
+    width: 200px;
+}
+.map {
+    margin-top: 40px;
+    border-radius: 15px;
+    overflow: hidden;
+}
 
 </style>
 </head>
@@ -268,7 +339,7 @@ section {
     <!-- NAVBAR -->
     <div class="navbar">
         <div class="logo">
-    <img src="images/logo.png" alt="Logo" style="height:40px;">
+    <img src="images/logo.png" alt="Logo" style="height:60px;">
 </div>
         <div class="nav-links">
             <a href="#">Home</a>
@@ -286,41 +357,45 @@ section {
     <div class="overlay"></div>
 
     <div class="hero-content">
-        <h1>All Digital & Repair Services Under One Roof</h1>
-        <p>Mobile Repair | Internet Café | Air Tickets | Insurance | CCTV (CamVibe)</p>
+       <h1>Fast, Reliable & Professional Digital Services</h1>
+<p>Mobile Repair, Air Tickets, Insurance & CCTV Installation — All in One Place</p>
+
+<div class="buttons">
+    <a href="#services" class="btn btn-primary">Explore Services</a>
+</div>
 
         
     </div>
 </section>
         
     </section>
-    <section class="services fade-in">
+   <section id="services" class="services fade-in">
     <h2>Our Services</h2>
 
     <div class="service-container">
 
         <div class="card">
-            <h3>Mobile Repair</h3>
+            <h3>📱 Mobile Repair</h3>
             <p>Display, charging jack, speaker, mic replacement & more.</p>
         </div>
 
         <div class="card">
-            <h3>Internet Café</h3>
+            <h3>💻 Internet Café</h3>
             <p>CSC, PAN card, printing, job forms, SPARSH services.</p>
         </div>
 
         <div class="card">
-            <h3>Air Tickets</h3>
+            <h3>✈️ Air Tickets</h3>
             <p>Domestic & international booking with best prices.</p>
         </div>
 
         <div class="card">
-            <h3>Vehicle Insurance</h3>
+            <h3>🚗 Vehicle Insurance</h3>
             <p>Affordable third-party insurance with instant quotes.</p>
         </div>
 
-        <div class="card">
-            <h3>CamVibe CCTV</h3>
+        <div class="card highlight">
+            <h3>📷 CamVibe CCTV</h3>
             <p>Professional CCTV installation for home & business security.</p>
         </div>
 
@@ -329,10 +404,11 @@ section {
 
 <section class="camvibe fade-in">
     <div class="cam-content">
-        <h2>CamVibe – A Unit of B Tech Repairs</h2>
-        <p>Advanced CCTV solutions for homes, shops & businesses. Secure what matters most with our professional installation services.</p>
+        <h2>Secure Your Home & Business with CamVibe</h2>
+<p>Professional CCTV installation for homes, shops, and offices. Monitor everything, anytime with reliable security solutions.</p>
+<h4>CamVibe – A Unit of B Tech Repairs</h4>
 
-        <button class="btn btn-primary">Get CCTV Quote</button>
+       <button class="btn btn-primary">Get Free CCTV Consultation</button>
     </div>
 </section>
 <section class="contact fade-in">
@@ -344,6 +420,26 @@ section {
         <a href="tel:+917889122847" class="btn btn-primary">Call Now</a>
         <a href="https://wa.me/917889122847" class="btn btn-outline">WhatsApp</a>
     </div>
+   <form class="contact-form" action="https://formsubmit.co/btechrepairsdehlon@gmail.com" method="POST"></form>
+    <input type="text" placeholder="Your Name" required>
+    <input type="tel" placeholder="Phone Number" required>
+    <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="New Inquiry from Website">
+
+    <select required>
+        <option value="">Select Service</option>
+        <option>Mobile Repair</option>
+        <option>Air Tickets</option>
+        <option>Insurance</option>
+        <option>CCTV (CamVibe)</option>
+        <option>Internet Café</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+</form>
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1441.7361732984834!2d75.84840320904176!3d30.745214116781064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1775228772559!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 </section>
 <a href="https://wa.me/917889122847" class="whatsapp-float">💬</a>
 
