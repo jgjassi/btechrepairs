@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B Tech Repairs</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        * 
+        html {
+    scroll-behavior: smooth;
+}
+section {
+    margin-top: 40px;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #0F172A;
+            color: white;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: rgba(0,0,0,0.6);
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3B82F6;
+        }
+
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3B82F6;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            margin-top: 15px;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #3B82F6;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2563EB;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #3B82F6;
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: #3B82F6;
+        }
+        .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -2;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.7);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    text-align: center;
+}
+.services {
+    padding: 80px 50px;
+    text-align: center;
+    background: #0F172A;
+}
+
+.services h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background: #1E293B;
+    padding: 25px;
+    width: 250px;
+    border-radius: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(59,130,246,0.3);
+}
+   .camvibe {
+    padding: 100px 50px;
+    background: linear-gradient(rgba(15,23,42,0.9), rgba(15,23,42,0.9)),
+                url('images/cctv.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.cam-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.cam-content p {
+    max-width: 600px;
+    margin: auto;
+    color: #ccc;
+    margin-bottom: 30px;
+} 
+.contact {
+    padding: 80px 50px;
+    text-align: center;
+    background: #1E293B;
+}
+
+.contact h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.contact p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.contact-buttons a {
+    text-decoration: none;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    font-size: 24px;
+    padding: 15px 18px;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.footer {
+    background: #020617;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer h3 {
+    color: #3B82F6;
+    margin-bottom: 10px;
+}
+
+.footer p {
+    color: #ccc;
+    margin: 5px 0;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #777;
+}
+
+</style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <div class="logo">
+    <img src="images/logo.png" alt="Logo" style="height:40px;">
+</div>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+   <section class="hero">
+    <video autoplay muted loop id="bg-video">
+        <source src="videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>All Digital & Repair Services Under One Roof</h1>
+        <p>Mobile Repair | Internet Café | Air Tickets | Insurance | CCTV (CamVibe)</p>
+
+        
+    </div>
+</section>
+        
+    </section>
+    <section class="services fade-in">
+    <h2>Our Services</h2>
+
+    <div class="service-container">
+
+        <div class="card">
+            <h3>Mobile Repair</h3>
+            <p>Display, charging jack, speaker, mic replacement & more.</p>
+        </div>
+
+        <div class="card">
+            <h3>Internet Café</h3>
+            <p>CSC, PAN card, printing, job forms, SPARSH services.</p>
+        </div>
+
+        <div class="card">
+            <h3>Air Tickets</h3>
+            <p>Domestic & international booking with best prices.</p>
+        </div>
+
+        <div class="card">
+            <h3>Vehicle Insurance</h3>
+            <p>Affordable third-party insurance with instant quotes.</p>
+        </div>
+
+        <div class="card">
+            <h3>CamVibe CCTV</h3>
+            <p>Professional CCTV installation for home & business security.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="camvibe fade-in">
+    <div class="cam-content">
+        <h2>CamVibe – A Unit of B Tech Repairs</h2>
+        <p>Advanced CCTV solutions for homes, shops & businesses. Secure what matters most with our professional installation services.</p>
+
+        <button class="btn btn-primary">Get CCTV Quote</button>
+    </div>
+</section>
+<section class="contact fade-in">
+    <h2>Contact Us</h2>
+
+    <p>Call us or send a message — we are ready to help you.</p>
+
+    <div class="contact-buttons">
+        <a href="tel:+917889122847" class="btn btn-primary">Call Now</a>
+        <a href="https://wa.me/917889122847" class="btn btn-outline">WhatsApp</a>
+    </div>
+</section>
+<a href="https://wa.me/917889122847" class="whatsapp-float">💬</a>
+
+<footer class="footer fade-in">
+    <div class="footer-content">
+        <h3>B Tech Repairs</h3>
+        <p>Mobile Repair | Internet Café | Air Tickets | Insurance | CCTV (CamVibe)</p>
+
+        <p>📞 Phone: +91 7889122847</p>
+        <p>📧 Email: btechrepairsdehlon@email.com</p>
+        <p>📍 Address: Near Bus Stand, VPO Dehlon, Ludhiana, Punjab - 141118</p>
+
+        <p class="copyright">© 2019 B Tech Repairs. All rights reserved.</p>
+    </div>
+</footer>
+<script>
+    const faders = document.querySelectorAll('.fade-in');
+
+    window.addEventListener('scroll', () => {
+        faders.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add('show');
+            }
+        });
+    });
+</script>
+</body>
+</html>
