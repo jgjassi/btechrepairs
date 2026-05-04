@@ -3,560 +3,649 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B Tech Repairs</title>
+    <title>B Tech Repairs — Mobile Repair, CCTV, Air Tickets & More in Dehlon, Ludhiana</title>
+    <meta name="description" content="B Tech Repairs in Dehlon, Ludhiana offers fast mobile repair, CCTV installation (CamVibe), air ticket booking, vehicle insurance and internet café services. Call +91 7889122847.">
+    <meta name="theme-color" content="#0F172A">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/logo.png">
 
     <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        * 
-        html {
-    scroll-behavior: smooth;
-}
-section {
-    margin-top: 40px;
-}
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 1s ease;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-        {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             background: #0F172A;
-            color: white;
+            color: #e2e8f0;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: inherit; }
+
+        /* SCROLL ANIMATION */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* NAVBAR */
-     .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 60px;
-    background: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(10px);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-}
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #3B82F6;
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 60px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
-       .nav-links a {
-    margin-left: 30px;
-    text-decoration: none;
-    color: #e2e8f0;
-    font-weight: 500;
-    position: relative;
-    transition: 0.3s;
-}
-.nav-links a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    left: 0;
-    bottom: -5px;
-    background: #3B82F6;
-    transition: 0.3s;
-}
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
 
-.nav-links a:hover::after {
-    width: 100%;
-}
-        .nav-links a:hover {
-            color: #3B82F6;
+        .logo img {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a {
+            margin-left: 32px;
+            text-decoration: none;
+            color: #e2e8f0;
+            font-weight: 500;
+            font-size: 15px;
+            position: relative;
+            transition: color 0.25s ease;
+        }
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -6px;
+            background: #3B82F6;
+            transition: width 0.25s ease;
+        }
+        .nav-links a:hover { color: #3B82F6; }
+        .nav-links a:hover::after { width: 100%; }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: #e2e8f0;
+            background: none;
+            border: none;
         }
 
         /* HERO */
         .hero {
-            height: 100vh;
+            position: relative;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding-top: 80px;
+            padding: 120px 20px 80px;
+            overflow: hidden;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(15,23,42,0.78), rgba(15,23,42,0.92));
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            max-width: 900px;
         }
 
         .hero h1 {
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1.2;
-}
-
-      .hero p {
-    margin-top: 15px;
-    font-size: 32px;
-    color: #cbd5f5;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
-}
-
-        .buttons {
-            margin-top: 30px;
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            color: #ffffff;
         }
 
+        .hero p {
+            margin-top: 18px;
+            font-size: 19px;
+            color: #cbd5e1;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .buttons {
+            margin-top: 32px;
+        }
+
+        /* BUTTONS */
         .btn {
-            padding: 12px 25px;
-            margin: 10px;
+            display: inline-block;
+            padding: 13px 28px;
+            margin: 6px;
             border: none;
-            border-radius: 25px;
+            border-radius: 30px;
             cursor: pointer;
             font-weight: 500;
-            transition: 0.3s;
+            font-size: 15px;
+            text-decoration: none;
+            transition: transform 0.2s ease, background 0.25s ease, box-shadow 0.25s ease;
         }
 
         .btn-primary {
             background: #3B82F6;
-            color: white;
+            color: #ffffff;
+            box-shadow: 0 6px 18px rgba(59,130,246,0.35);
         }
-
         .btn-primary:hover {
             background: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 24px rgba(59,130,246,0.45);
         }
 
         .btn-outline {
             background: transparent;
             border: 2px solid #3B82F6;
-            color: white;
+            color: #ffffff;
         }
-
         .btn-outline:hover {
             background: #3B82F6;
+            transform: translateY(-2px);
         }
-        .hero {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-}
 
-#bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -2;
-}
+        /* SECTION COMMON */
+        section {
+            padding: 90px 50px;
+        }
 
-.overlay {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.7);
-    z-index: -1;
-}
+        .section-heading {
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            text-align: center;
+            margin-bottom: 14px;
+            letter-spacing: -0.3px;
+        }
 
-.hero-content {
-    position: relative;
-    text-align: center;
-}
-.services {
-    padding: 80px 50px;
-    text-align: center;
-    background: #0F172A;
-}
+        .section-heading::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #3B82F6;
+            margin: 14px auto 0;
+            border-radius: 2px;
+        }
 
-.services h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
+        .section-subtitle {
+            text-align: center;
+            color: #94a3b8;
+            max-width: 620px;
+            margin: 0 auto 50px;
+            font-size: 16px;
+        }
 
-.service-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
+        /* SERVICES */
+        .services {
+            background: #0F172A;
+        }
 
-.card {
-    background: #1E293B;
-    padding: 30px;
-    width: 260px;
-    border-radius: 18px;
-    transition: 0.3s;
-    cursor: pointer;
-    text-align: left;
-}
+        .service-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 26px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-.card h3 {
-    color: #ffffff;
-    transition: 0.3s;
-}
+        .card {
+            background: #1E293B;
+            padding: 32px 26px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            cursor: default;
+        }
 
-.card:hover h3 {
-    color: #3B82F6;
-}
+        .card .icon {
+            font-size: 32px;
+            margin-bottom: 14px;
+            display: block;
+        }
 
-.card p {
-    font-size: 14px;
-    color: #ccc;
-}
+        .card h3 {
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            transition: color 0.25s ease;
+        }
 
-.card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 40px rgba(59,130,246,0.4);
-}
-  
-.camvibe {
-    padding: 120px 50px;
-    background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)),
-                url('images/cctv.jpg');
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-}
+        .card p {
+            font-size: 14.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
 
-.cam-content h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-}
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(59,130,246,0.18);
+            border-color: rgba(59,130,246,0.4);
+        }
+        .card:hover h3 { color: #3B82F6; }
 
-.cam-content p {
-    max-width: 600px;
-    margin: auto;
-    color: #ccc;
-    margin-bottom: 30px;
-} 
-.contact {
-    padding: 80px 50px;
-    text-align: center;
-    background: #1E293B;
-}
+        .card.highlight {
+            border: 2px solid #3B82F6;
+            box-shadow: 0 10px 30px rgba(59,130,246,0.25);
+        }
+        .card.highlight h3 { color: #3B82F6; }
 
-.contact h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
-}
+        /* CAMVIBE FEATURE */
+        .camvibe {
+            padding: 110px 50px;
+            background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)),
+                        url('images/cctv.jpg');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
 
-.contact p {
-    color: #ccc;
-    margin-bottom: 25px;
-}
+        .cam-content h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #ffffff;
+            letter-spacing: -0.3px;
+        }
 
-.contact-buttons a {
-    text-decoration: none;
-}
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    font-size: 24px;
-    padding: 15px 18px;
-    border-radius: 50%;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-.footer {
-    background: #020617;
-    padding: 40px 20px;
-    text-align: center;
-}
+        .cam-content p {
+            max-width: 640px;
+            margin: 0 auto 14px;
+            color: #cbd5e1;
+            font-size: 16px;
+        }
 
-.footer h3 {
-    color: #3B82F6;
-    margin-bottom: 10px;
-}
+        .cam-content h4 {
+            margin: 14px 0 28px;
+            color: #3B82F6;
+            font-weight: 500;
+            font-size: 15px;
+            letter-spacing: 0.3px;
+        }
 
-.footer p {
-    color: #ccc;
-    margin: 5px 0;
-}
+        /* CONTACT */
+        .contact {
+            background: #1E293B;
+            text-align: center;
+        }
 
-.footer .copyright {
-    margin-top: 15px;
-    font-size: 13px;
-    color: #777;
-}
-.highlight {
-    border: 2px solid #3B82F6;
-    transform: scale(1.05);
-}
-.highlight h3 {
-    color: #3B82F6;
-}
-.cam-content h2 {
-    font-size: 40px;
-    margin-bottom: 15px;
-}
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
 
-.cam-content h4 {
-    margin-top: 10px;
-    color: #3B82F6;
-    font-weight: 500;
-}
-.contact-form {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
+        .contact-buttons a { text-decoration: none; }
 
-.contact-form input,
-.contact-form select {
-    width: 300px;
-    padding: 12px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-}
+        .contact-form {
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.contact-form button {
-    width: 200px;
-}
-.map {
-    margin-top: 40px;
-    border-radius: 15px;
-    overflow: hidden;
-}
-/* MOBILE RESPONSIVE */
-@media (max-width: 768px) {
+        .contact-form input,
+        .contact-form select {
+            width: 100%;
+            padding: 13px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.08);
+            background: #0F172A;
+            color: #e2e8f0;
+            outline: none;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
 
-    .navbar {
-        padding: 10px 20px;
-    }
+        .contact-form input::placeholder { color: #64748b; }
 
-    .nav-links {
-        display: none;
-    }
+        .contact-form input:focus,
+        .contact-form select:focus {
+            border-color: #3B82F6;
+            box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+        }
 
-    .hero h1 {
-        font-size: 32px;
-    }
+        .contact-form select { cursor: pointer; }
 
-    .hero p {
-        font-size: 18px;
-        padding: 0 10px;
-    }
+        .contact-form button {
+            width: auto;
+            min-width: 220px;
+            margin-top: 6px;
+        }
 
-    .service-container {
-        flex-direction: column;
-        align-items: center;
-    }
+        .map {
+            margin: 60px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
 
-    .card {
-        width: 90%;
-    }
+        .map iframe {
+            display: block;
+            width: 100%;
+            height: 380px;
+            border: 0;
+        }
 
-    .cam-content h2 {
-        font-size: 28px;
-    }
+        /* WHATSAPP FLOAT */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 22px;
+            right: 22px;
+            background: #25D366;
+            color: white;
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            border-radius: 50%;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+            transition: transform 0.25s ease;
+            z-index: 999;
+        }
+        .whatsapp-float:hover { transform: scale(1.08); }
 
-    .contact-form input,
-    .contact-form select {
-        width: 90%;
-    }
+        /* FOOTER */
+        .footer {
+            background: #020617;
+            padding: 50px 20px 30px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
 
-    .contact-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .menu-toggle {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-}
+        .footer h3 {
+            color: #3B82F6;
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 700;
+        }
 
-/* Mobile menu */
-@media (max-width: 768px) {
+        .footer p {
+            color: #94a3b8;
+            margin: 6px 0;
+            font-size: 14.5px;
+        }
 
-    .menu-toggle {
-        display: block;
-    }
+        .footer .copyright {
+            margin-top: 22px;
+            font-size: 13px;
+            color: #475569;
+        }
 
-    .nav-links {
-        position: absolute;
-        top: 70px;
-        right: 0;
-        background: #0F172A;
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        text-align: center;
-    }
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 768px) {
+            .navbar { padding: 10px 20px; }
+            .logo img { height: 56px; }
 
-    .nav-links a {
-        padding: 15px;
-        display: block;
-        border-top: 1px solid #1E293B;
-    }
+            .menu-toggle { display: block; }
 
-    .nav-links.active {
-        display: flex;
-    }
-}
+            .nav-links {
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(12px);
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+                border-top: 1px solid rgba(255,255,255,0.05);
+            }
 
-}
+            .nav-links.active { display: flex; }
 
-</style>
+            .nav-links a {
+                margin: 0;
+                padding: 14px;
+                display: block;
+                border-top: 1px solid rgba(255,255,255,0.04);
+            }
+            .nav-links a:first-child { border-top: none; }
+            .nav-links a::after { display: none; }
+
+            .hero { padding: 110px 18px 70px; }
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 16px; }
+
+            section { padding: 70px 22px; }
+            .section-heading { font-size: 28px; }
+            .cam-content h2 { font-size: 28px; }
+
+            .contact-form { max-width: 100%; }
+
+            .map iframe { height: 300px; }
+        }
+    </style>
 </head>
 <body>
 
     <!-- NAVBAR -->
-    <div class="navbar">
-        <div class="logo">
-    <img src="images/logo.png" alt="Logo" style="height:60px;">
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-</div>
+    <nav class="navbar">
+        <a href="#home" class="logo">
+            <img src="images/logo.png" alt="B Tech Repairs">
+        </a>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">☰</button>
         <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </div>
-    </div>
+    </nav>
 
     <!-- HERO SECTION -->
-   <section class="hero">
-    <video autoplay muted loop id="bg-video">
-        <source src="videos/hero.mp4" type="video/mp4">
-    </video>
+    <section class="hero" id="home">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="videos/hero.mp4" type="video/mp4">
+        </video>
+        <div class="overlay"></div>
 
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-       <h1>Fast, Reliable & Professional Digital Services</h1>
-<p>Mobile Repair, Air Tickets, Insurance & CCTV Installation — All in One Place</p>
-
-<div class="buttons">
-    <a href="#services" class="btn btn-primary">Explore Services</a>
-</div>
-
-        
-    </div>
-</section>
-        
+        <div class="hero-content">
+            <h1>Fast, Reliable & Professional Digital Services</h1>
+            <p>Mobile Repair, Air Tickets, Insurance & CCTV Installation — all in one place, right here in Dehlon.</p>
+            <div class="buttons">
+                <a href="#services" class="btn btn-primary">Explore Services</a>
+                <a href="#contact" class="btn btn-outline">Contact Us</a>
+            </div>
+        </div>
     </section>
-   <section id="services" class="services fade-in">
-    <h2>Our Services</h2>
 
-    <div class="service-container">
+    <!-- SERVICES -->
+    <section id="services" class="services fade-in">
+        <h2 class="section-heading">Our Services</h2>
+        <p class="section-subtitle">Everything you need under one roof — handled by people you can trust.</p>
 
-        <div class="card">
-            <h3>📱 Mobile Repair</h3>
-            <p>Display, charging jack, speaker, mic replacement & more.</p>
+        <div class="service-container">
+            <div class="card">
+                <span class="icon">📱</span>
+                <h3>Mobile Repair</h3>
+                <p>Display, charging jack, speaker, mic replacement and more — most repairs done same-day.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">💻</span>
+                <h3>Internet Café</h3>
+                <p>CSC services, PAN card, printing, job forms and SPARSH — all handled in minutes.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">✈️</span>
+                <h3>Air Tickets</h3>
+                <p>Domestic and international bookings with the best fares and instant confirmation.</p>
+            </div>
+
+            <div class="card">
+                <span class="icon">🚗</span>
+                <h3>Vehicle Insurance</h3>
+                <p>Affordable third-party and comprehensive insurance with instant quotes.</p>
+            </div>
+
+            <div class="card highlight">
+                <span class="icon">📷</span>
+                <h3>CamVibe CCTV</h3>
+                <p>Professional CCTV installation for homes, shops and offices — full setup and support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CAMVIBE FEATURE -->
+    <section class="camvibe fade-in">
+        <div class="cam-content">
+            <h2>Secure Your Home & Business with CamVibe</h2>
+            <p>Professional CCTV installation for homes, shops and offices. Monitor everything, anytime, with reliable security solutions tailored to your space.</p>
+            <h4>CamVibe — A Unit of B Tech Repairs</h4>
+            <a href="#contact" class="btn btn-primary">Get Free CCTV Consultation</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact fade-in">
+        <h2 class="section-heading">Contact Us</h2>
+        <p class="section-subtitle">Call us, message on WhatsApp, or send us your details — we'll get back to you quickly.</p>
+
+        <div class="contact-buttons">
+            <a href="tel:+917889122847" class="btn btn-primary">📞 Call Now</a>
+            <a href="https://wa.me/917889122847" class="btn btn-outline">💬 WhatsApp</a>
         </div>
 
-        <div class="card">
-            <h3>💻 Internet Café</h3>
-            <p>CSC, PAN card, printing, job forms, SPARSH services.</p>
+        <form class="contact-form" action="https://formsubmit.co/btechrepairsdehlon@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+
+            <select name="service" required>
+                <option value="">Select Service</option>
+                <option>Mobile Repair</option>
+                <option>Air Tickets</option>
+                <option>Insurance</option>
+                <option>CCTV (CamVibe)</option>
+                <option>Internet Café</option>
+            </select>
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="New Inquiry from Website">
+            <input type="hidden" name="_next" value="https://btechrepairs.netlify.app">
+
+            <button type="submit" class="btn btn-primary">Submit Inquiry</button>
+        </form>
+
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1441.7361732984834!2d75.84840320904176!3d30.745214116781064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1775228772559!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="B Tech Repairs location"></iframe>
         </div>
+    </section>
 
-        <div class="card">
-            <h3>✈️ Air Tickets</h3>
-            <p>Domestic & international booking with best prices.</p>
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/917889122847" class="whatsapp-float" aria-label="Chat on WhatsApp">💬</a>
+
+    <!-- FOOTER -->
+    <footer class="footer fade-in">
+        <div class="footer-content">
+            <h3>B Tech Repairs</h3>
+            <p>Mobile Repair · Internet Café · Air Tickets · Insurance · CCTV (CamVibe)</p>
+            <p>📞 +91 7889122847</p>
+            <p>📧 btechrepairsdehlon@gmail.com</p>
+            <p>📍 Near Bus Stand, VPO Dehlon, Ludhiana, Punjab — 141118</p>
+            <p class="copyright">© 2026 B Tech Repairs. All rights reserved.</p>
         </div>
+    </footer>
 
-        <div class="card">
-            <h3>🚗 Vehicle Insurance</h3>
-            <p>Affordable third-party insurance with instant quotes.</p>
-        </div>
-
-        <div class="card highlight">
-            <h3>📷 CamVibe CCTV</h3>
-            <p>Professional CCTV installation for home & business security.</p>
-        </div>
-
-    </div>
-</section>
-
-<section class="camvibe fade-in">
-    <div class="cam-content">
-        <h2>Secure Your Home & Business with CamVibe</h2>
-<p>Professional CCTV installation for homes, shops, and offices. Monitor everything, anytime with reliable security solutions.</p>
-<h4>CamVibe – A Unit of B Tech Repairs</h4>
-
-       <button class="btn btn-primary">Get Free CCTV Consultation</button>
-    </div>
-</section>
-<section class="contact fade-in">
-    <h2>Contact Us</h2>
-    <p>Call us or send a message — we are ready to help you.</p>
-
-    <div class="contact-buttons">
-        <a href="tel:9198XXXXXXXX" class="btn btn-primary">Call Now</a>
-        <a href="https://wa.me/9198XXXXXXXX" class="btn btn-outline">WhatsApp</a>
-    </div>
-
-    <form class="contact-form" action="https://formsubmit.co/btechrepairsdehlon@gmail.com" method="POST">
-
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="tel" name="phone" placeholder="Phone Number" required>
-
-        <select name="service" required>
-            <option value="">Select Service</option>
-            <option>Mobile Repair</option>
-            <option>Air Tickets</option>
-            <option>Insurance</option>
-            <option>CCTV (CamVibe)</option>
-            <option>Internet Café</option>
-        </select>
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="New Inquiry from Website">
-        <input type="hidden" name="_next" value="https://btechrepairs.netlify.app">
-
-        <button type="submit" class="btn btn-primary">Submit Inquiry</button>
-
-    </form>
-<div class="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1441.7361732984834!2d75.84840320904176!3d30.745214116781064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1775228772559!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-</section>
-<a href="https://wa.me/917889122847" class="whatsapp-float">💬</a>
-
-<footer class="footer fade-in">
-    <div class="footer-content">
-        <h3>B Tech Repairs</h3>
-        <p>Mobile Repair | Internet Café | Air Tickets | Insurance | CCTV (CamVibe)</p>
-
-        <p>📞 Phone: +91 7889122847</p>
-        <p>📧 Email: btechrepairsdehlon@email.com</p>
-        <p>📍 Address: Near Bus Stand, VPO Dehlon, Ludhiana, Punjab - 141118</p>
-
-        <p class="copyright">© 2019 B Tech Repairs. All rights reserved.</p>
-    </div>
-</footer>
-<script>
-    const faders = document.querySelectorAll('.fade-in');
-
-    window.addEventListener('scroll', () => {
-        faders.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                el.classList.add('show');
-            }
-        });
-    });
-</script>
     <script>
-function toggleMenu() {
-    document.querySelector('.nav-links').classList.toggle('active');
-}
-</script>
+        // Fade-in on scroll
+        const faders = document.querySelectorAll('.fade-in');
+        const reveal = () => {
+            faders.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('show');
+                }
+            });
+        };
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Close menu after clicking a link (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
